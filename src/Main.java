@@ -1,40 +1,41 @@
+import Database.ConnectionConfiguration;
+import Entitet.Author;
+import Entitet.Låner;
+import Mappere.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-       // System.out.println(getString("Hvad hedder du?"));
+        BogMapper.getBooks();
 
-        System.out.println(getInt("angiv venligt din skostørrelse"));
-        System.out.println(getInt("angiv venligt din højde"));
+        // ----------           IGNORE          ---------- //
 
-    }
+        // ConnectionConfiguration.getConnection(); // used to test connection
+        // System.out.println(getString("Hvad hedder du?"));
+        //  System.out.println(getInt("angiv venligt din skostørrelse"));
+        // System.out.println(getInt("angiv venligt din højde"));
 
-    public static String getString(String s) {
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print(s + ": ");
-        return scanner.nextLine();
-
-    }
-
-    public static int getInt(String s){
-
-        int res;
-
-        while (true) {
-            try {
-                res = Integer.parseInt(getString(s));
-                return res;
-            } catch (Exception e){
-                System.out.println("Husk ikke tal ord");
+      /*  while (true) {
+            switch (getString("Angiv dit ønske ")){
+                case "lån bog":
+                    System.out.println("du ønsker at låne en bog");
+               // case "stop":
+                 //   break;
             }
-        }
+            if (getString("q for quit").equalsIgnoreCase("q")){
+                break;
+            }
+        } */
     }
-
-
-
-
 }
